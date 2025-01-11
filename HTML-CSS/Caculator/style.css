@@ -1,0 +1,100 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  align-items: center;
+  background: linear-gradient(320deg, #eb92be, #ffef78, #63c9b4);
+  display: flex;
+  font-family: "Dosis", sans-serif;
+  height: 100vh;
+  justify-content: center;
+}
+
+.wrapper {
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1); /* Removed 'solid' */
+  color: #232323;
+  background: rgba(255, 255, 255, 0.3); /* Corrected value */
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  width: 360px;
+  height: 540px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen {
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(35, 35, 35, 0.1);
+  color: #232323;
+  font-size: 2rem;
+  overflow: auto;
+  padding: 15px;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.calc-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Add consistent spacing between rows */
+}
+
+.calc-button-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Ensure spacing between buttons */
+}
+
+.calc-button {
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex: 1; /* Ensures all buttons are of equal width */
+}
+
+.calc-button:hover {
+  background-color: #f4f4f4;
+}
+
+.calc-button:active {
+  background-color: #ffef78;
+}
+
+.calc-button-double {
+  flex: 2; /* Makes "C" button double width */
+}
+
+.calc-button-triple {
+  flex: 3; /* Makes "0" button triple width */
+}
+
+.calc-button:last-child {
+  background: #d72880;
+  color: #fff;
+}
+
+.calc-button:last-child:hover {
+  background-color: #c4176c;
+}

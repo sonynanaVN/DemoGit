@@ -128,7 +128,7 @@ body {
     padding-left: calc(1rem * 3.5);
     border-radius: 100px;
     width: 100%;
-    transition: background .5s;
+    transition: 0.5s;
 }
 
 .login-card input:focus {
@@ -149,7 +149,7 @@ body {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
-    transition: background .5s;
+    transition:0.5s;
 }
 
 .login-card button:hover {

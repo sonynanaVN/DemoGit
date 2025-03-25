@@ -40,25 +40,45 @@ body {
   color: #333;
   font-size: 13px;
   text-decoration: none;
-  margin: 15px 0 10px;
+  margin: 0px 0 10px;
 }
 .container button {
   background-color: #512da8;
   color: #fff;
   font-size: 12px;
-  padding: 10px 45px;
+  padding: 10px 20px;
   border: 1px solid transparent;
   border-radius: 8px;
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  margin: 10px;
+  /* margin: 10px; */
   cursor: pointer;
+  float: left;
 }
 .container button.hidden {
   background-color: transparent;
   border-color: #fff;
 }
+.login-buttons {
+  display: flex;
+  gap: 5px;
+  float: left;
+}
+
+.admin-btn {
+  background-color: #ff4757;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.admin-btn:hover {
+  background-color: red;
+}
+
 .container form {
   background-color: #fff;
   display: flex;

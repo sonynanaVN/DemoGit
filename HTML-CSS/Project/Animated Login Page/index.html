@@ -19,7 +19,7 @@
   <body>
     <div class="container" id="container">
       <div class="form-container sign-up">
-        <form>
+        <form id="registerForm">
           <h1>Create Account</h1>
           <div class="social-icons">
             <div class="social-icons">
@@ -49,15 +49,15 @@
               </a>
             </div>
           </div>
-          <span>or use your email for registeration</span>
-          <input type="name" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button>Register</button>
+          <span>or use your email for registration</span>
+          <input type="name" placeholder="Name" required/>
+          <input type="email" placeholder="Email" required/>
+          <input type="password" placeholder="Password" required/>
+          <a href="#" id="registerFrom"><button type="submit">Register</button></a>
         </form>
       </div>
       <div class="form-container sign-in">
-        <form>
+        <form id="loginform">
           <h1>Sign In</h1>
           <div class="social-icons">
             <div class="social-icons">
@@ -88,10 +88,11 @@
             </div>
           </div>
           <span>or use your email for password</span>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <a href="#">Forget Your Password?</a>
-          <button>Sign In</button>
+          <input type="email" id="emailForm" placeholder="Email" required />
+          <input type="password" id="passwordForm" placeholder="Password" required/>
+          <a href="forgot-password.html" id="forgotpass">Forget Your Password?</a>
+          <a href="#" id="dashboard"><button type="submit">Sign In</button></a>
+          <a href="dashboard.html" id="guestLogin">Or continue with guest account</a>
         </form>
       </div>
       <div class="toggle-container">

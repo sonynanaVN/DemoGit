@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (username === "admin@gmail.com" && password === "admin") {
                 alert("Đăng nhập thành công, chuyển tới trang quản lý với tư cách admin");
                 setTimeout(() => {
-                    window.location.href = "/Dashboard/dashboard.html";
+                    window.location.href = "/Manager/manager.html";
                 }, 1800);
             } else {
                 adminLoginAttempts++;

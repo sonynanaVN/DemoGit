@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Manager/manager.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Quản lý</h2>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Doanh thu</a></li>
+            <li>
+                <a href=""><i class="fas fa-user-cog"></i> Trình quản lý</a>
+                <ul class="submenu">
+                    <li><a href="/Dashboard/dashboard.html">Quản lý tài khoản</a></li>
+                    <li><a href="#">Quản lý vai trò</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fas fa-file-invoice"></i> Đơn thanh toán</a>
+                <ul class="submenu">
+                    <li><a href="#">Quản lý tài khoản</a></li>
+                    <li><a href="#">Quản lý vai trò</a></li>
+                </ul></li>
+            <li><a href="#"><i class="fas fa-box"></i> Kho hàng</a><ul class="submenu">
+                <li><a href="#">Quản lý tài khoản</a></li>
+                <li><a href="#">Quản lý vai trò</a></li>
+            </ul></li>
+            <li><a href="#"><i class="fas fa-users"></i> Người dùng</a><ul class="submenu">
+                <li><a href="#">Quản lý tài khoản</a></li>
+                <li><a href="#">Quản lý vai trò</a></li>
+            </ul></li>
+            <li><a href="#"><i class="fas fa-cogs"></i> Cài đặt</a><ul class="submenu">
+                <li><a href="#">Quản lý tài khoản</a></li>
+                <li><a href="#">Quản lý vai trò</a></li>
+            </ul></li>
+            <li id="logout"><a href="/login/index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Nội dung chính -->
+    <div class="main-content">
+        <div class="header">
+            <div class="logo">
+                <img src="/main/Logo_DutchLady_1.png" alt="Logo">
+            </div class="search">
+            <input type="text" class="search-bar" placeholder="Tìm kiếm...">
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="dashboard-cards">
+            <div class="card">
+                <h3>Người dùng khả dụng</h3>
+                <p>150</p>
+            </div>
+            <div class="card">
+                <h3>Đơn hàng đặt được </h3>
+                <p>75</p>
+            </div>
+            <div class="card">
+                <h3>Sản phẩm bán được</h3>
+                <p>120</p>
+            </div>
+        </div>
+
+        <!-- Biểu đồ -->
+        <canvas id="salesChart" width="400px" height="200px"></canvas>
+    </div>
+
+    <script src="/Manager/manager.js"></script>
+</body>
+</html>

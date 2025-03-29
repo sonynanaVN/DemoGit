@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Đơn Hàng</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quản Lý Đơn Hàng</h1>
+        
+        <!-- Tổng quan doanh thu -->
+        <section class="summary">
+            <div class="card">
+                <h2>Tổng Doanh Thu</h2>
+                <p>$50,000</p>
+            </div>
+            <div class="card">
+                <h2>Đơn Hàng Đã Giao</h2>
+                <p>120</p>
+            </div>
+            <div class="card">
+                <h2>Đơn Hàng Đang Xử Lý</h2>
+                <p>30</p>
+            </div>
+            <div class="card">
+                <h2>Đơn Hàng Bị Hủy</h2>
+                <p>10</p>
+            </div>
+        </section>
+        
+        <!-- Danh sách đơn hàng -->
+        <section class="orders">
+            <h2>Danh Sách Đơn Hàng</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã Đơn</th>
+                        <th>Khách Hàng</th>
+                        <th>Ngày Đặt</th>
+                        <th>Tổng Tiền</th>
+                        <th>Trạng Thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#1001</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>25-03-2025</td>
+                        <td>$200</td>
+                        <td>Đã giao</td>
+                    </tr>
+                    <tr>
+                        <td>#1002</td>
+                        <td>Trần Thị B</td>
+                        <td>24-03-2025</td>
+                        <td>$150</td>
+                        <td>Đang xử lý</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Lịch sử giao dịch -->
+        <section class="transactions">
+            <h2>Lịch Sử Giao Dịch</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã Giao Dịch</th>
+                        <th>Ngày</th>
+                        <th>Số Tiền</th>
+                        <th>Trạng Thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TXN5001</td>
+                        <td>23-03-2025</td>
+                        <td>$500</td>
+                        <td>Hoàn thành</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Khiếu nại & hoàn tiền -->
+        <section class="issues">
+            <h2>Vấn Đề Liên Quan</h2>
+            <ul>
+                <li>Khách hàng Nguyễn Văn A yêu cầu hoàn tiền - Đang xử lý</li>
+                <li>Đơn hàng #1003 bị thất lạc - Đã giải quyết</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

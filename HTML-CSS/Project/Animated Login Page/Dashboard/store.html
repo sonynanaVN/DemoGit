@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Management</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="dashboard.html" class="logo">
+            <i class='bx bx-package'></i>
+            <div class="logo-name"><span>Warehouse</span> Management</div>
+        </a>
+        <ul class="side-menu">
+            <li><a href="dashboard.html"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li class="active"><a href="warehouse.html"><i class='bx bx-warehouse'></i>Warehouse</a></li>
+            <li><a href="orders.html"><i class='bx bx-cart'></i>Orders</a></li>
+            <li><a href="analytics.html"><i class='bx bx-analyse'></i>Analytics</a></li>
+            <li><a href="settings.html"><i class='bx bx-cog'></i>Settings</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search items...">
+                    <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+            <label for="theme-toggle" class="theme-toggle"></label>
+        </nav>
+
+        <main>
+            <div class="header">
+                <h1>Warehouse Management</h1>
+                <a href="#" class="add-item">
+                    <i class='bx bx-plus'></i>
+                    <span>Add Item</span>
+                </a>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Category</th>
+                        <th>Stock</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Apple Juice</td>
+                        <td>Beverage</td>
+                        <td>120</td>
+                        <td>$2.50</td>
+                        <td>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Orange Juice</td>
+                        <td>Beverage</td>
+                        <td>85</td>
+                        <td>$3.00</td>
+                        <td>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

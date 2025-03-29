@@ -56,6 +56,14 @@ body {
   cursor: pointer;
   float: left;
 }
+#dashboard button:hover{
+  background-color: rgb(59, 201, 201);
+  transform: scale(1.03);
+}
+#registerF button:hover{
+  background-color: rgb(59, 201, 201);
+  transform: scale(1.03);
+}
 .container button.hidden {
   background-color: transparent;
   border-color: #fff;
@@ -77,6 +85,7 @@ body {
 
 .admin-btn:hover {
   background-color: red;
+  transform: scale(1.03);
 }
 
 .container form {

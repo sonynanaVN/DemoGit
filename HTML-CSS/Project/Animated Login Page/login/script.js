@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, 1800);
             } else {
                 checkLogin++;
-                alert(`Có lỗi xảy ra, hãy thử lại.`);
+                alert(`Tên đăng nhập hoặc mật khẩu không đúng, hãy thử lại.`);
                 if (checkLogin >= maxError) {
                     alert("Bạn đã nhập sai quá nhiều lần!");
                     window.location.href = "/Error Page/index.html"; // Chuyển tới trang lỗi

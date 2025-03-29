@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
           const password = document.querySelector('.sign-in input[type="password"]').value.trim();
 
           if (username === "admin@gmail.com" && password === "admin") {
-              alert("Login successful! Redirecting to Dashboard in few seconds...");
+              alert("Đăng nhập thành công,chuyển tới trang chủ với tư cách khách đăng nhập");
               setTimeout(() => {
-                  window.location.href = "dashboard.html"; // Chuyển sau 3 giây
+                  window.location.href = "/main/Main.html"; // Chuyển sau 1.8 giây
               }, 1800);
           } else {
               alert("Thông tin đăng nhập hoặc mật khẩu không đúng");
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Xử lý đăng ký
-  const registerForm = document.querySelector(".sign-up form");
+  const registerForm = document.getElementById("registerForm");
   if (registerForm) {
       registerForm.addEventListener("submit", function (e) {
           e.preventDefault(); // Ngăn chặn tải lại trang
@@ -42,9 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
           const password = document.querySelector(".sign-up input[type='password']").value.trim();
 
           if (name !== "" || email !== "" || password !== "") {
-              alert("Registration successful! Redirecting to Dashboard in few seconds...");
+              alert("Đăng ký thành công,chuyển tới trang chủ với tư cách khách đăng nhập");
               setTimeout(() => {
-                  window.location.href = "dashboard.html"; // Chuyển sau 3 giây
+                  window.location.href = "/main/Main.html"; // Chuyển sau 1.8 giây
               }, 2000);
           } else {
               alert("Có lỗi xẩy ra,hãy thử lại");
@@ -52,3 +52,21 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 });
+const loginForm = document.getElementById("adminLogin");
+if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // Ngăn tải lại trang
+
+        const username = document.querySelector('.sign-in input[type="email"]').value.trim();
+        const password = document.querySelector('.sign-in input[type="password"]').value.trim();
+
+        if (username === "admin@gmail.com" && password === "admin") {
+            alert("Đăng nhập thành công,chuyển tới trang quản lý với tư cách admin");
+            setTimeout(() => {
+                window.location.href = "dashboard.html"; // Chuyển sau 1.8 giây
+            }, 1800);
+        } else {
+            alert("Thông tin đăng nhập hoặc mật khẩu không đúng");
+        }
+    });
+}

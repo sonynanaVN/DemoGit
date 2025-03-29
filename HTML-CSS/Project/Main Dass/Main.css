@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+.container{
+    width: 100%;
+    height: 200vh;
+    background: white;
+}
+.first{
+    width: 100%;
+    height: 90px;
+    background: #1093F3;
+    transition: 1s;
+    position: fixed;
+    border-radius: 5px;
+}
+.first ul{
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+}
+.poster{
+    width: 100%;
+    height: 600px;
+}
+.second{
+    width: 100%;
+    height: 700px;
+    background: #74bcf0;
+    border-radius: 5px;
+}
+.carousel {
+    position: relative;
+    max-width: 100%; /* Chiều rộng tối đa của carousel */
+    margin: 90px auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 700px; /* Chiều cao của carousel */
+}
+
+.carousel-slides {
+    position: absolute;
+    width: 300%; /* 3 slides, mỗi slide 100% */
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 33.33%; /* Mỗi slide chiếm 1/3 chiều rộng */
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh vừa khung */
+}
+
+/* Ẩn các radio button */
+input[type="radio"] {
+    display: none;
+}
+
+/* Điều khiển vị trí slide */
+#slide1:checked ~ .carousel-slides {
+    transform: translateX(0);
+}
+#slide2:checked ~ .carousel-slides {
+    transform: translateX(-33.33%);
+}
+#slide3:checked ~ .carousel-slides {
+    transform: translateX(-66.66%);
+}
+
+/* Nút điều hướng (dots) */
+.carousel-nav {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.carousel-nav label {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+#slide1:checked ~ .carousel-nav label[for="slide1"],
+#slide2:checked ~ .carousel-nav label[for="slide2"],
+#slide3:checked ~ .carousel-nav label[for="slide3"] {
+    background: #333; /* Màu khi được chọn */
+}
+
+/* Nút trước/sau */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+.third{
+    width: 100%;
+    height: 1000px;
+    background: #1093F3;
+    border-radius: 5px;
+}
+/* .footer{
+    width: 100%;
+    height: 300px;
+    background: #349ee9;
+    border-radius: 5px;
+} */
+.footer-bottom {
+    background-color: #1E90FF;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 20px;
+    bottom: 0;               
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}

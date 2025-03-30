@@ -9,28 +9,95 @@
     height: 200vh;
     background: white;
 }
-.first{
-    width: 100%;
-    height: 90px;
-    background: #1093F3;
-    transition: 1s;
-    position: fixed;
-    border-radius: 5px;
-    float: inline-start;
-    z-index: 1000; /* Đảm bảo nổi lên trên tất cả */
-}
+
+
+ .first{ 
+    width: 100%; 
+    height: 90px; 
+    background: #1093F3; 
+    transition: 1s; 
+    position: fixed; 
+    float: inline-start; 
+    z-index: 1000; /* Đảm bảo nổi lên trên tất cả */ }
 .first ul{
     display: flex; 
     align-items: center; 
-    justify-content: space-between; 
+    justify-content: space-around; 
     list-style: none; 
-    padding: 0; 
+}
+.first ul li {
+    position: relative;
+}
+.first ul li a {
+    text-decoration: none;
+    border: 2px solid #1093F3;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #ffffff;
+    transition: 0.5s ;
+}
+.first ul li a:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+.first ul li:last-child {
+    display: flex;
+    gap: 15px; /* Khoảng cách giữa các nút */
+}
+.dropdown:hover .submenu {
+    display: block;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: #1093F3;
+    border-radius: 5px;
+    list-style: none;
+}
+.dropdown {
+    position: relative;
+}
+.submenu li {
     margin: 0;
 }
+.submenu li a {
+    display: block;
+    padding: 10px 15px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.submenu li a:hover {
+    background-color: #ffffff;
+    color: #1093F3;
+}
+.GioHang-button, .login-button {
+    text-decoration: none;
+    border: 2px solid #1093F3;
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.GioHang-button:hover, .login-button:hover {
+    color: #1093F3;
+    border-color: #ffffff;
+}
+.GioHang-button {
+    background: #0576c7;
+}
+
+
 .poster{
     width: 100%;
     height: 600px;
 }
+
+
 .second{
     width: 100%;
     height: 500px;
@@ -126,14 +193,76 @@ input[type="radio"] {
 .next {
     right: 10px;
 }
-.third{
+
+
+.SanPham {
     width: 100%;
     height: 1000px;
-    background: #008be7;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.SanPham h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 15px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 80%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.product img {
+    width: 100px;
+    height: 100px;
     border-radius: 5px;
 }
+
+.product h3 {
+    font-size: 18px;
+    margin: 0;
+    color: #007bff;
+}
+
+.product p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.product label,
+.product input,
+.product button {
+    font-size: 14px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
 .footer-bottom {
-    background-color: #8fbff0;
+    background-color: #1093F3;
     color: white;
     text-align: center;
     padding: 25px;
@@ -152,4 +281,10 @@ input[type="radio"] {
 .social-icons img {
     width: 24px;
     height: 24px;
+}
+.submenu{
+    display: none;
+}
+.dropdown:hover .submenu{
+    display: block;
 }

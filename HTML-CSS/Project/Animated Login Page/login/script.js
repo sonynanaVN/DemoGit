@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const username = document.querySelector('.sign-in input[type="email"]').value.trim();
             const password = document.querySelector('.sign-in input[type="password"]').value.trim();
 
-            if (username === "admin@gmail.com" && password === "admin") {
+            if (username === "guest@gmail.com" && password === "guest") {
                 alert("Đăng nhập thành công, chuyển tới trang quản lý với tư cách khách đăng nhập");
                 setTimeout(() => {
                     window.location.href = "/main/Main.html";

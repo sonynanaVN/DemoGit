@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông báo & Avatar</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f4f4f4;
+            height: 100vh;
+        }
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            height: 100vh;
+            background: #333;
+            color: white;
+            padding-top: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 15px;
+            border-bottom: 1px solid #444;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        .sidebar ul li:hover {
+            background: #555;
+        }
+        .header {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+        }
+        .bingbong {
+            position: relative;
+            cursor: pointer;
+        }
+        .notification-icon {
+            font-size: 24px;
+        }
+        .notifications {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+            width: 250px;
+            border-radius: 5px;
+        }
+        .notifications p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 5px;
+        }
+        .notifications p:hover {
+            background-color: #ccc;
+            cursor: pointer;
+        }
+        .bingbong:hover .notifications {
+            display: block;
+        }
+        .avatar {
+            position: relative;
+            cursor: pointer;
+        }
+        .avatar img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+            width: 150px;
+            border-radius: 5px;
+        }
+        .dropdown p:hover {
+            background-color: #ccc;
+            cursor: pointer;
+        }
+        .avatar:hover .dropdown {
+            display: block;
+        }
+        .content {
+            margin-top: 100px;
+            width: 80%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #333;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .status.active {
+            color: green;
+            font-weight: bold;
+        }
+        .status.inactive {
+            color: red;
+            font-weight: bold;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Quản lý</h2>
+        <ul>
+            <li><a href="manager.html">Doanh thu</a></li>
+            <li><a href="users.html">Trình quản lý</a></li>
+            <li><a href="orders.html">Đơn thanh toán</a></li>
+            <li><a href="inventory.html">Kho hàng</a></li>
+            <li><a href="customers.html">Người dùng</a></li>
+            <li><a href="settings.html">Cài đặt</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h2>Quản lý Người dùng</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>Tuổi</th>
+                    <th>Trạng thái</th>
+                    <th>Danh hiệu</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Nguyễn Văn A</td>
+                    <td>30</td>
+                    <td><span class="status active">Hoạt động</span></td>
+                    <td>Khách hàng thân thiết</td>
+                    <td><button>Chỉnh sửa</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Trần Thị B</td>
+                    <td>25</td>
+                    <td><span class="status inactive">Tạm dừng</span></td>
+                    <td>Khách hàng bình thường</td>
+                    <td><button>Chỉnh sửa</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

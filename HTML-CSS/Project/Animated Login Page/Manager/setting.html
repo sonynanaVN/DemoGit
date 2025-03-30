@@ -15,16 +15,16 @@
         <ul>
             <li><a href="/Manager/manager.html"><i class="fas fa-home"></i> Doanh thu</a></li>
             <li>
-                <a href=""><i class="fas fa-user-cog"></i> Trình quản lý </a>
+                <a href=""><i class="fas fa-user-cog"></i> Trình quản lý</a>
                 <ul class="submenu">
-                    <li><a href="/Manager/Quảnlýngườidùng.html">📂 Quản lý tài khoản</a></li>
-                    <li><a href="/Manager/Phânquyềnngườidùng.html">📋 Phân quyền người dùng</a></li>
+                    <li><a href="/Manager/User.html">📂 Quản lý tài khoản</a></li>
+                    <li><a href="#">📋 Phân quyền người dùng</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class="fas fa-file-invoice"></i> Đơn thanh toán</a>
                 <ul class="submenu">
-                    <li><a href="/Manager/Quảnlýđơnhàng.html">🛒 Quản lý đơn hàng</a></li>
-                    <li><a href="/Manager/thanhtoánhoàntiền.html">💳 Thanh toán & Hoàn tiền </a></li>
+                    <li><a href="/Manager/bill.html">🛒 Quản lý đơn hàng</a></li>
+                    <li><a href="#">💳 Thanh toán & Hoàn tiền </a></li>
                 </ul></li>
             <li><a href="#"><i class="fas fa-box"></i> Kho hàng</a><ul class="submenu">
                 <li><a href="/Manager/store.html">📊 Tồn kho & Nhập xuất hàng</a></li>
@@ -71,28 +71,27 @@
                 <img src="/main/Logo_DutchLady_1.png" alt="Logo">
             </div>
         </div>
-        
+      
+<!-- setting -->
+<div class="content">
+    <nav>
+        <h2>Cài đặt</h2>
+    </nav>
+    <main>
+        <form>
+            <label for="language">Ngôn ngữ:</label>
+            <select id="language">
+                <option value="vi">Tiếng Việt</option>
+                <option value="en">English</option>
+            </select>
 
-        <!-- Dashboard Cards -->
-        <div class="dashboard-cards">
-            <div class="card">
-                <h3>Người dùng khả dụng</h3>
-                <p>150</p>
-            </div>
-            <div class="card">
-                <h3>Đơn hàng đặt được </h3>
-                <p>75</p>
-            </div>
-            <div class="card">
-                <h3>Sản phẩm bán được</h3>
-                <p>120</p>
-            </div>
-        </div>
+            <label for="notifications">Thông báo:</label>
+            <input type="checkbox" id="notifications" checked>
 
-        <!-- Biểu đồ -->
-        <canvas id="salesChart" width="400px" height="200px"></canvas>
-    </div>
+            <label for="dark-mode">Chế độ tối:</label>
+            <input type="checkbox" id="dark-mode">
 
-    <script src="/Manager/manager.js"></script>
-</body>
-</html>
+            <button type="submit">Lưu Cài Đặt</button>
+        </form>
+    </main>
+</div>

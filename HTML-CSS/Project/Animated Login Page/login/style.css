@@ -17,6 +17,13 @@ body {
   flex-direction: column;
   height: 100vh;
 }
+.logo{
+  margin-left: 1100px;
+}
+.logo img{
+  width: 100px;
+  height: 100px;
+}
 .container {
   background-color: #fff;
   border-radius: 30px;

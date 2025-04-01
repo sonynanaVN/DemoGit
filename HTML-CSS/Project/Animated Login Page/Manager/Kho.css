@@ -1,0 +1,50 @@
+.milk-store{
+    width: 100%;
+    border-top: 2px double burlywood;
+    display: flex;
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(209, 128, 23);
+}
+.collections{
+    border: 3px solid burlywood;
+    margin: 10px;
+    margin-left: 13px;
+    padding: 10px;
+    border-radius: 6px;
+}
+.collections img{
+    width: 200px;
+    height: 200px;
+}
+.collections button{
+    margin-left: 90px;
+    background-color: antiquewhite;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    padding: 3px 3px;
+    border-radius: 6px;
+}
+.cost{
+    border: 1px solid burlywood;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+.drop-down{
+    display: none;
+    width: 200px;
+    background-color: antiquewhite;
+    color: azure;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left:35px;
+    border-radius: 6px;
+
+}
+.collections:hover .drop-down{
+    display: block;
+}

@@ -228,4 +228,33 @@ footer {
   font-size: 16px;
   color: white
 }
+/* check box */
+/* CSS cho checkbox và label */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 10px;
+  accent-color: #3498db; /* Màu sắc cho checkbox */
+  width: 18px;
+  height: 18px;
+}
+
+.checkbox-container label {
+  color: #333;
+  line-height: 1.5;
+}
+
+.checkbox-container a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.checkbox-container a:hover {
+  text-decoration: underline;
+}
 

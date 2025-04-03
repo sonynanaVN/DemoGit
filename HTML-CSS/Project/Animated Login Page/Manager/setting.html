@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Manager/manager.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/Manager/"></script>
     <title>Dashboard</title>
 </head>
 <body>
@@ -31,8 +31,7 @@
                 <li><a href="/Manager/Quảnlýnhàcungcấp.html">🚚 Quản lý nhà cung cấp</a></li>
             </ul></li>
             <li><a href="#"><i class="fas fa-users"></i> Người dùng</a><ul class="submenu">
-                <li><a href="#">💬 Hỗ trợ khách hàng</a></li>
-                <li><a href="#">Quản lý vai trò</a></li>
+                <li><a href="/Manager/User.html">💬 Hỗ trợ khách hàng</a></li>
             </ul></li>
             <li><a href="#"><i class="fas fa-cogs"></i> Cài đặt</a><ul class="submenu">
                 <li><a href="/Manager/setting.html">⚙️ Cài đặt chung</a></li>
@@ -85,7 +84,123 @@
                 <option value="en">English</option>
             </select>
 
-            <label for="notifications">Thông báo:</label>
+            <label for="notifications">Thông báo:</label><!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="/Manager/manager.css">
+                <title>Cài đặt</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        background: #f4f4f4;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    .settings-container {
+                        width: 80%;
+                        margin: 20px auto;
+                        background: white;
+                        padding: 20px;
+                        border-radius: 10px;
+                        box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+                    }
+                    .settings-header {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        border-bottom: 2px solid #ddd;
+                        padding-bottom: 10px;
+                        margin-bottom: 20px;
+                    }
+                    .settings-header h2 {
+                        margin: 0;
+                        color: #333;
+                    }
+                    .settings-section {
+                        margin-bottom: 20px;
+                    }
+                    .settings-section h3 {
+                        background: #007bff;
+                        color: white;
+                        padding: 10px;
+                        border-radius: 5px;
+                    }
+                    .settings-item {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 10px;
+                        border-bottom: 1px solid #ddd;
+                    }
+                    .settings-item label {
+                        font-weight: bold;
+                    }
+                    .settings-item select, .settings-item input {
+                        padding: 8px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        width: 50%;
+                    }
+                    .save-btn {
+                        background: #28a745;
+                        color: white;
+                        padding: 10px 15px;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        width: 100%;
+                        margin-top: 20px;
+                    }
+                    .save-btn:hover {
+                        background: #218838;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="settings-container">
+                    <div class="settings-header">
+                        <h2>Cài đặt hệ thống</h2>
+                        <button class="save-btn">Lưu thay đổi</button>
+                    </div>
+            
+                    <div class="settings-section">
+                        <h3>Tài khoản</h3>
+                        <div class="settings-item">
+                            <label>Email:</label>
+                            <input type="email" value="user@example.com">
+                        </div>
+                        <div class="settings-item">
+                            <label>Mật khẩu:</label>
+                            <input type="password" value="********">
+                        </div>
+                    </div>
+            
+                    <div class="settings-section">
+                        <h3>Thông báo</h3>
+                        <div class="settings-item">
+                            <label>Bật thông báo:</label>
+                            <select>
+                                <option value="on">Bật</option>
+                                <option value="off">Tắt</option>
+                            </select>
+                        </div>
+                    </div>
+            
+                    <div class="settings-section">
+                        <h3>Giao diện</h3>
+                        <div class="settings-item">
+                            <label>Chủ đề:</label>
+                            <select>
+                                <option value="light">Sáng</option>
+                                <option value="dark">Tối</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </body>
+            </html>
+            
             <input type="checkbox" id="notifications" checked>
 
             <label for="dark-mode">Chế độ tối:</label>

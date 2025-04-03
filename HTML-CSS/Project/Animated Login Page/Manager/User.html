@@ -36,6 +36,10 @@
             color: green;
             font-weight: bold;
         }
+        .status.pending{
+            color: rgb(242, 242, 70);
+            font-weight: bold;
+        }
         .status.inactive {
             color: red;
             font-weight: bold;
@@ -50,6 +54,19 @@
         }
         button:hover {
             background: #0056b3;
+        }
+        .dropdown-menu{
+            display: none;
+            position: absolute;
+            width: 180px;
+            background: white;
+            border: 1px solid #ddd;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+        }
+        .action-btn:hover .dropdown-menu{
+            display: block;
         }
     </style>
 </head>
@@ -78,6 +95,7 @@
             </ul></li>
             <li><a href="#"><i class="fas fa-users"></i> Người dùng</a><ul class="submenu">
                 <li><a href="/Manager/User.html">💬 Hỗ trợ khách hàng</a></li>
+                <li><a href="#">Quản lý vai trò</a></li>
             </ul></li>
             <li><a href="#"><i class="fas fa-cogs"></i> Cài đặt</a><ul class="submenu">
                 <li><a href="/Manager/setting.html">⚙️ Cài đặt chung</a></li>
@@ -114,80 +132,64 @@
             <img src="/main/Logo_DutchLady_1.png" alt="Logo">
         </div>
     </div>
-<!-- User Management Page -->
+<!--Trang phân quyền người dùng -->
 <div class="content">
-    <nav>
-        <h2>Quản lý Người dùng</h2>
-    </nav>
-    <main>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Tên</th>
-                    <th>Tuổi</th>
-                    <th>Trạng thái</th>
-                    <th>Danh hiệu</th>
-                    <th>Hành động</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Nguyễn Văn A</td>
-                    <td>30</td>
-                    <td><span class="status active">Hoạt động</span></td>
-                    <td>Khách hàng thân thiết</td>
-                    <td><button>Chỉnh sửa</button></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Trần Thị B</td>
-                    <td>25</td>
-                    <td><span class="status inactive">Tạm dừng</span></td>
-                    <td>Khách hàng bình thường</td>
-                    <td><button>Chỉnh sửa</button></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Trần Thị B</td>
-                    <td>25</td>
-                    <td><span class="status inactive">Tạm dừng</span></td>
-                    <td>Khách hàng bình thường</td>
-                    <td><button>Chỉnh sửa</button></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Trần Thị B</td>
-                    <td>25</td>
-                    <td><span class="status inactive">Tạm dừng</span></td>
-                    <td>Khách hàng bình thường</td>
-                    <td><button>Chỉnh sửa</button></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Trần Thị B</td>
-                    <td>25</td>
-                    <td><span class="status inactive">Tạm dừng</span></td>
-                    <td>Khách hàng bình thường</td>
-                    <td><button>Chỉnh sửa</button></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Trần Thị B</td>
-                    <td>25</td>
-                    <td><span class="status inactive">Tạm dừng</span></td>
-                    <td>Khách hàng bình thường</td>
-                    <td><button>Chỉnh sửa</button></td>
-                </tr>                <tr>
-                    <td>2</td>
-                    <td>Trần Thị B</td>
-                    <td>25</td>
-                    <td><span class="status inactive">Tạm dừng</span></td>
-                    <td>Khách hàng bình thường</td>
-                    <td><button>Chỉnh sửa</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </main>
+    <h2>Hỗ trợ khách hàng</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tên khách hàng</th>
+                <th>Vấn đề</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Nguyễn Văn B</td>
+                <td>Không nhận được hàng</td>
+                <td><span class="status pending">Đang xử lý</span></td>
+                <td><button>Chi tiết</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Trần Thị C</td>
+                <td>Hoàn tiền không thành công</td>
+                <td><span class="status active">Đã giải quyết</span></td>
+                <td><button>Chi tiết</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Trần Thị C</td>
+                <td>Hoàn tiền không thành công</td>
+                <td><span class="status inactive">Chưa giải quyết</span></td>
+                <td><button>Chi tiết</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Trần Thị C</td>
+                <td>Hoàn tiền không thành công</td>
+                <td><span class="status inactive">Chưa giải quyết</span></td>
+                <td><button>Chi tiết</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Trần Thị C</td>
+                <td>Hoàn tiền không thành công</td>
+                <td><span class="status inactive">Chưa giải quyết</span></td>
+                <td><button>Chi tiết</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Trần Thị C</td>
+                <td>Hoàn tiền không thành công</td>
+                <td><span class="status inactive">Chưa giải quyết</span></td>
+                <td><button>Chi tiết</button></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+</body>
+</html>

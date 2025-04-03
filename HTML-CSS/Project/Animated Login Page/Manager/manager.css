@@ -82,20 +82,29 @@ body {
 /* Header */
 .header {
     display: flex;
-    justify-content: flex-end; /* Đẩy logo qua phải */
+    justify-content: space-around;
     background-color: rgb(50, 249, 249);
 }
-.search{
-    position:relative;
-    margin-right: 40%;
+.search {
+    float: left;
+    left: 0;
+    position: relative;
+    width: 350px; /* Chiều rộng cố định cho search */
 }
-.search-bar{
-    margin: 18px 5px 5px 10px ;
+
+.search-bar {
+    position: absolute;
+    top: 50%; /* Căn giữa theo chiều dọc */
+    left: 0px; /* Đưa thanh tìm kiếm vào gần bên trái */
+    margin-left: 30px; /* Khoảng cách từ bên trái */
     padding: 10px;
     border-radius: 5px;
-    width: 500px;
-    border-color:#555;
+    width: calc(100% - 30px); /* Chiều rộng của thanh tìm kiếm chiếm toàn bộ không gian còn lại */
+    border-color: #555;
+    transform: translateY(-50%); /* Căn giữa theo chiều dọc */
 }
+
+
 /* Logo */
 .logo img {
     width: 80px; /* Kích thước phù hợp */
@@ -135,7 +144,7 @@ body {
 .bingbong {
     position: absolute;
     cursor: pointer;
-    margin-right: 250px;
+    float: left;
     margin-top: 20px;
     height: 62px;
 }
@@ -164,9 +173,10 @@ body {
     border-radius: 5px;
 }
 .avatar {
+    float: left;
     position: relative;
     cursor: pointer;
-    margin-right: 50px;
+    right: 0;
     margin-top: 20px;
 }
 .avatar img {

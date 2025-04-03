@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Manager/manager.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="/Manager/Kho.css">
     <title>Dashboard</title>
 </head>
@@ -33,7 +31,6 @@
             </ul></li>
             <li><a href="#"><i class="fas fa-users"></i> Người dùng</a><ul class="submenu">
                 <li><a href="/Manager/User.html">💬 Hỗ trợ khách hàng</a></li>
-                <li><a href="#">Quản lý vai trò</a></li>
             </ul></li>
             <li><a href="#"><i class="fas fa-cogs"></i> Cài đặt</a><ul class="submenu">
                 <li><a href="/Manager/setting.html">⚙️ Cài đặt chung</a></li>
@@ -72,6 +69,45 @@
                 <img src="/main/Logo_DutchLady_1.png" alt="Logo">
             </div>
         </div>
+<!-- java -->
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Chỉnh sửa giá
+        document.querySelectorAll(".collections").forEach(collection => {
+            let priceElement = collection.querySelector(".cost p:first-child");
+            let quantityElement = collection.querySelector(".cost p:last-child");
+            let buttons = collection.querySelectorAll(".drop-down a");
+            
+            // Sửa giá
+            priceElement.addEventListener("click", function () {
+                let newPrice = prompt("Nhập giá mới:", this.textContent.replace(" vnd", ""));
+                if (newPrice !== null && !isNaN(newPrice)) {
+                    this.textContent = newPrice + " vnd";
+                }
+            });
+            
+            // Sửa số lượng
+            buttons.forEach((btn, index) => {
+                btn.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    let currentQuantity = parseInt(quantityElement.textContent.replace("Còn lại:", "").replace(" thùng", ""));
+                    
+                    if (index === 0) {
+                        // Tăng số lượng
+                        currentQuantity++;
+                    } else if (index === 1 && currentQuantity > 0) {
+                        // Giảm số lượng
+                        currentQuantity--;
+                    }
+                    
+                    quantityElement.textContent = "Còn lại:" + currentQuantity + " thùng";
+                });
+            });
+        });
+    });
+    
+        
+ </script>
 <!-- Thanh content -->
  <h1>Kho hàng tồn dư</h1>
  <h2>Gian hàng sữa thùng</h2>
@@ -80,7 +116,7 @@
             <div class="collections">
             <img src="/Manager/picture/Pic1.jpg" alt="">
             <button>Chức năng</button>
-            <div class="drop-down">
+            <div class="drop-down" >
                 <a href="#">+</a>
                 <a href="#">-</a>
                 <a href="#">Đánh dấu có vấn đề</a>
@@ -93,7 +129,7 @@
         <div class="collections">
             <img src="/Manager/picture/Pic2.jpg" alt="">
             <button>Chức năng</button>
-            <div class="drop-down">
+            <div class="drop-down" >
                 <a href="#">+</a>
                 <a href="#">-</a>
                 <a href="#">Đánh dấu có vấn đề</a>
@@ -410,6 +446,5 @@
     </div>
 </div>
 </div>
-    <script src="script.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Manager/manager.css">
     <link rel="stylesheet" href="/Manager/Kho.css">
-    <title>Dashboard</title>
+    <title>Admin Page</title>
 </head>
 <body>
     <!-- Sidebar -->
@@ -70,48 +70,123 @@
             </div>
         </div>
 <!-- java -->
- <script>
+<script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Chỉnh sửa giá
-        document.querySelectorAll(".collections").forEach(collection => {
+        // === PHẦN 1: Chỉnh sửa giá và số lượng ===
+        function attachEventToCollection(collection) {
             let priceElement = collection.querySelector(".cost p:first-child");
             let quantityElement = collection.querySelector(".cost p:last-child");
             let buttons = collection.querySelectorAll(".drop-down a");
-            
+    
             // Sửa giá
             priceElement.addEventListener("click", function () {
                 let newPrice = prompt("Nhập giá mới:", this.textContent.replace(" vnd", ""));
                 if (newPrice !== null && !isNaN(newPrice)) {
-                    this.textContent = newPrice + " vnd";
+                    this.textContent = parseInt(newPrice).toLocaleString() + " vnd";
                 }
             });
-            
+    
             // Sửa số lượng
             buttons.forEach((btn, index) => {
                 btn.addEventListener("click", function (event) {
                     event.preventDefault();
                     let currentQuantity = parseInt(quantityElement.textContent.replace("Còn lại:", "").replace(" thùng", ""));
-                    
                     if (index === 0) {
-                        // Tăng số lượng
                         currentQuantity++;
                     } else if (index === 1 && currentQuantity > 0) {
-                        // Giảm số lượng
                         currentQuantity--;
                     }
-                    
                     quantityElement.textContent = "Còn lại:" + currentQuantity + " thùng";
                 });
             });
+        }
+    
+        document.querySelectorAll(".collections").forEach(attachEventToCollection);
+    
+        // === PHẦN 2: Thêm sản phẩm ===
+        const addItemBtn = document.getElementById("addItemBtn");
+        const modal = document.getElementById("addItemModal");
+        const closeBtn = document.querySelector(".modal .close");
+        const saveBtn = document.getElementById("saveItem");
+        const inputImage = document.getElementById("itemImage");
+        const preview = document.getElementById("imagePreview");
+        const categorySelect = document.getElementById("itemCategory"); // dropdown loại sản phẩm
+    
+        // Hiển thị ảnh khi chọn
+        inputImage.addEventListener("change", (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    preview.src = e.target.result;
+                    preview.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    
+        addItemBtn.addEventListener("click", () => modal.style.display = "block");
+        closeBtn.addEventListener("click", () => modal.style.display = "none");
+    
+        window.addEventListener("click", (e) => {
+            if (e.target == modal) modal.style.display = "none";
+        });
+    
+        saveBtn.addEventListener("click", function () {
+            const name = document.getElementById("itemName").value;
+            const price = document.getElementById("itemPrice").value;
+            const quantity = document.getElementById("itemQuantity").value;
+            const file = inputImage.files[0];
+            const category = categorySelect.value;
+    
+            if (!name || !price || !quantity || !file || !category) {
+                alert("Vui lòng điền đầy đủ thông tin.");
+                return;
+            }
+    
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const imageDataURL = e.target.result;
+    
+                const newItem = document.createElement("div");
+                newItem.classList.add("collections");
+                newItem.innerHTML = `
+                    <img src="${imageDataURL}" alt="">
+                    <button>Chức năng</button>
+                    <div class="drop-down">
+                        <a href="#">+</a>
+                        <a href="#">-</a>
+                        <a href="#">Đánh dấu có vấn đề</a>
+                    </div>
+                    <div class="cost">
+                        <p>${parseInt(price).toLocaleString()} vnd</p>
+                        <p>Còn lại:${quantity} thùng</p>
+                    </div>
+                `;
+    
+                // Tìm đúng gian hàng và thêm sản phẩm vào
+                const container = document.querySelector(`.${category}`);
+                if (container) {
+                    container.appendChild(newItem);
+                    attachEventToCollection(newItem); // Gắn sự kiện cho sản phẩm mới
+                    modal.style.display = "none";
+                } else {
+                    alert("Không tìm thấy gian hàng phù hợp.");
+                }
+            };
+    
+            reader.readAsDataURL(file);
         });
     });
+    </script>
     
+    
+
         
- </script>
 <!-- Thanh content -->
  <h1>Kho hàng tồn dư</h1>
  <h2>Gian hàng sữa thùng</h2>
-        <div class="milk-store">   
+        <div class="milk-store store-sua-thung">   
             <!-- Hàng 1 sữa -->
             <div class="collections">
             <img src="/Manager/picture/Pic1.jpg" alt="">
@@ -167,7 +242,7 @@
         </div>
     </div>
      <h2>Gian hàng sữa bịch</h2>
-    <div class="milk-store">   
+    <div class="milk-store store-sua-bich">   
         <!-- Hàng 2 sữa bịch -->
         <div class="collections">
         <img src="/Manager/picture/suabich1.jpg" alt="">
@@ -223,7 +298,7 @@
     </div>
 </div>
 <h2>Gian hàng phô mai</h2>
-<div class="milk-store">   
+<div class="milk-store store-pho-mai">   
     <!-- Hàng 3 phomai -->
     <div class="collections">
     <img src="/Manager/picture/phomai1.jpg" alt="">
@@ -279,7 +354,7 @@
 </div>
 </div>
 <h2>Gian hàng sữa đặc</h2>
-<div class="milk-store">   
+<div class="milk-store store-sua-dac">   
     <!-- Hàng 2 phomai -->
     <div class="collections">
     <img src="/Manager/picture/suadac1.jpg" alt="">
@@ -335,7 +410,7 @@
 </div>
 </div>
 <h2>Gian hàng sữa chua</h2>
-<div class="milk-store">   
+<div class="milk-store store-sua-chua">   
     <!-- Hàng 2 phomai -->
     <div class="collections">
     <img src="/Manager/picture/suachua1.jpg" alt="">
@@ -391,8 +466,8 @@
 </div>
 </div>
 <h2>Gian hàng đặc biệt:</h2>
-<div class="milk-store">   
-    <!-- Hàng 2 phomai -->
+<div class="milk-store store-dac-biet">   
+    <!-- Hàng 4 kem sua -->
     <div class="collections">
     <img src="/Manager/picture/matna1.jpg" alt="">
     <button>Chức năng</button>
@@ -446,5 +521,42 @@
     </div>
 </div>
 </div>
+<!-- Nút thêm hàng -->
+<button id="addItemBtn" class="add-item-button">+</button>
+
+<!-- Form nhập hàng mới -->
+<div id="addItemModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Thêm sản phẩm mới vào kho</h2>
+    <label>Tên sản phẩm:</label>
+    <input type="text" id="itemName" placeholder="Nhập tên sản phẩm">
+
+    <label>Giá (vnd):</label>
+    <input type="number" id="itemPrice" placeholder="Ví dụ: 112000">
+
+    <label>Số lượng (thùng):</label>
+    <input type="number" id="itemQuantity" placeholder="Ví dụ: 16">
+    <label for="itemCategory">Loại sản phẩm:</label>
+    <select id="itemCategory">
+    <option value="store-sua-thung">Sữa thùng</option>
+    <option value="store-sua-bich">Sữa bịch</option>
+    <option value="store-pho-mai">Phô mai</option>
+    <option value="store-sua-dac">Sữa đặc</option>
+    <option value="store-sua-chua">Sữa chua</option>
+    <option value="store-dac-biet">Sữa đặc biệt</option>
+    </select>
+    <br>
+    <label>Đường dẫn ảnh:</label>
+    <label for="itemImage">Chọn ảnh</label>
+    <input type="file" id="itemImage" accept="image/*">
+    <img id="imagePreview" style="display: none; max-width: 100px; margin-top: 10px;" />
+
+    <br>
+    <img id="preview">
+    <button id="saveItem">Lưu sản phẩm</button>
+  </div>
+</div>
+
 </body>
 </html>

@@ -24,3 +24,9 @@ function showCartDetail() {
 function hideCartDetail() {
     document.getElementById('cartDetail').style.display = 'none';
 }
+function showGuessDetail() {
+    document.getElementById('guessDetail').style.display = 'block';
+}
+function hideGuessDetail() {
+    document.getElementById('guessDetail').style.display = 'none';
+}

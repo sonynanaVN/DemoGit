@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Main.css">
+    <link rel="stylesheet" href="MainGuess.css">
     <title>DutchLady</title>
 </head>
 <body>
@@ -25,13 +25,14 @@
             <a href="#">Tin tức</a>
             <a href="#">Liên hệ</a>
         </nav>
-        <div class="user-actions">
-            <div class="login" onclick="window.location.href='/login/index.html'">
-                <span>Đăng nhập/ Đăng ký</span>
-                <div class="login-detail" id="loginDetail">
-                    <button onclick="window.location.href='account_page.html'">Tài khoản</button>
-                </div>
+        <div class="user-actions"></div>
+        <div class="guess" onmouseover="showGuessDetail()" onmouseout="hideGuessDetail()">
+            <span><img src="logo.png">Hello, Guess</span>
+            <div class="guess-detail" id="guessDetail">
+                <button onclick="">Thông tin</button><br>
+                <button onclick="">Đăng xuất</button>
             </div>
+        </div>
     
             <div class="cart" onmouseover="showCartDetail()" onmouseout="hideCartDetail()">
                 <span><img src="GioHang.png" alt="Giỏ hàng">Giỏ hàng</span>
